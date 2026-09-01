@@ -1,0 +1,19 @@
+===BEGIN LAB1 SUBMISSION===
+student_id: 6705140006
+timestamp: 2026-09-01T07:16:11Z
+hostname: ubuntu
+---[user: getent passwd]---
+liam686:x:1001:1001::/home/liam686:/bin/sh
+---[group: getent group]---
+dba:x:1001:
+---[user-in-group: id]---
+uid=1001(liam686) gid=1001(dba) groups=1001(dba)
+---[file stat: home file mode/owner]---
+/home/liam686/report_7435.txt mode=700 owner=liam686 group=dba
+---[sshd effective config]---
+port 2403
+permitrootlogin no
+passwordauthentication no
+---[integrity]---
+sshd_sha256: 945e01e593f3cbd295becb08f1aea62ff6fba93ee369e5673137e4ee3737c801
+===END LAB1 SUBMISSION===
