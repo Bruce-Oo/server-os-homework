@@ -1,0 +1,41 @@
+===BEGIN DHCP SUBMISSION===
+student_id: 6705140006
+timestamp: 2026-09-14T16:29:45Z
+hostname: ubuntu
+---[dhcpd.conf]---
+default-lease-time 86400;
+max-lease-time 7200;
+authoritative;
+
+subnet 192.168.13.0 netmask 255.255.255.0 {
+  range 172.30.1.100 172.30.1.200;
+  option routers 192.168.13.1;
+  range 192.168.13.67 192.168.13.167;
+  option subnet-mask 255.255.255.0;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+  option domain-name "lab.local";
+
+  host reserved-client {
+        hardware ethernet 52:54:00:4c:8e:9e;
+        fixed-address 192.168.13.206;
+    }
+}
+---[config syntax test: dhcpd -t]---
+Internet Systems Consortium DHCP Server 4.4.3-P1
+Copyright 2004-2022 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+bad range, address 172.30.1.100 not in subnet 192.168.13.0 netmask 255.255.255.0
+
+If you think you have received this message due to a bug rather
+than a configuration issue please read the section on submitting
+bugs on either our web page at www.isc.org or in the README file
+before submitting a bug.  These pages explain the proper
+process and the information we find helpful for debugging.
+
+exiting.
+---[service status]---
+active
+---[integrity]---
+conf_sha256: 2a7f906d1d3727f31ef75902e45d661afc9e3820a6827960d84b9cb70c6cc230
+===END DHCP SUBMISSION===
